@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -20,6 +21,8 @@ import { AssetsComponent } from './apt-assets/all-assets-container/assets.compon
 import { AssetComponent } from './apt-assets/asset-preview/asset.component';
 import { SearchResultsComponent } from './apt-assets/filtered-assets/search-results.component';
 import { InspectDocComponent } from './admin/inspect-doc/inspect-doc.component';
+import { ConnectionService } from './services/connection-service/connection.service';
+import { ApiService } from './services/api-service/api.service';
 
 @NgModule({
     declarations: [
@@ -42,6 +45,7 @@ import { InspectDocComponent } from './admin/inspect-doc/inspect-doc.component';
     ],
     imports: [
         BrowserModule,
+        HttpModule,
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: 'assets', component: AssetsComponent, data: { breadcrumb: 'Assets' } },
@@ -62,7 +66,9 @@ import { InspectDocComponent } from './admin/inspect-doc/inspect-doc.component';
         )
     ],
     providers: [
-        ContractsService
+        ContractsService,
+        ConnectionService,
+        ApiService
     ],
     bootstrap: [AppComponent]
 })
