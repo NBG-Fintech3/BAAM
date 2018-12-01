@@ -7,7 +7,6 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
-import { AssetsComponent } from './assets/assets.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { AssetComponent } from './asset/asset.component';
@@ -16,9 +15,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { BotPageComponent } from './bot-page/bot-page.component';
 import { EntirePageLoaderComponent } from './entire-page-loader/entire-page-loader.component';
 import { ContractsService } from './services/contracts/contracts.service';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AssetsComponent } from './all-assets-container/assets.component';
 
 @NgModule({
     declarations: [
