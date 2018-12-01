@@ -1,0 +1,354 @@
+{
+    "ApplicationName": "BAAM_TransferAssets2",
+    "DisplayName": "BAAM_TransferAssets2",
+    "Description": "Allows transfer of assets between a buyer and a seller, with inspection functionality",
+    "ApplicationRoles": [
+      {
+        "Name": "Buyer",
+        "Description": "User that places an offer on an asset"
+      },
+      {
+        "Name": "BankInspector",
+        "Description": "User that inspects the asset and signs off on inspection"
+      },
+      {
+        "Name": "Admin",
+        "Description": "User that signs off on the asset price"
+      }
+    ],
+    "Workflows": [
+      {
+        "Name": "BAAM_TransferAssets2",
+        "DisplayName": "BAAM_TransferAssets2",
+        "Description": "Handles the business logic for the asset transfer scenario",
+        "Initiators": [ "Admin" ],
+        "StartState":  "Active",
+        "Properties": [
+          {
+            "Name": "State",
+            "DisplayName": "State",
+            "Description": "Holds the state of the contract",
+            "Type": {
+              "Name": "state"
+            }
+          },
+          {
+            "Name": "AssetCode",
+            "Description": "The code of this asset",
+            "DisplayName": "Code of the asset",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "AssetName",
+            "Description": "The name of this asset",
+            "DisplayName": "Name of the asset",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "AssetType",
+            "DisplayName": "AssetType",
+            "Description": "Describes the type of the asset being sold",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "AssetCountry",
+            "Description": "The Country of this asset",
+            "DisplayName": "Country of the asset",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "MarketPrice",
+            "DisplayName": "Market Price",
+            "Description": "The Market price for the asset",
+            "Type": {
+              "Name": "money"
+            }
+          },
+          {
+            "Name": "DistressedPrice",
+            "DisplayName": "Distressed Price",
+            "Description": "The Distressed price for the asset",
+            "Type": {
+              "Name": "money"
+            }
+          },
+          {
+            "Name": "InstanceBuyer",
+            "DisplayName": "Instance Buyer",
+            "Description": "The user that places an offer for this asset",
+            "Type": {
+              "Name": "Buyer"
+            }
+          },
+          {
+            "Name": "InstanceBankInspector",
+            "DisplayName": "Instance Bank Inspector",
+            "Description": "The user that inspects this asset",
+            "Type": {
+              "Name": "BankInspector"
+            }
+          },
+          {
+            "Name": "InstanceAdmin",
+            "DisplayName": "Instance Admin",
+            "Description": "The seller of this particular asset",
+            "Type": {
+              "Name": "Admin"
+            }
+          }
+        ],
+        "Constructor": {
+          "Parameters": [
+            {
+              "Name": "aCode",
+              "Description": "The code of this asset",
+              "DisplayName": "Code of the asset",
+              "Type": {
+                "Name": "string"
+              }
+            },
+            {
+              "Name": "aName",
+              "Description": "The name of this asset",
+              "DisplayName": "Name of the asset",
+              "Type": {
+                "Name": "string"
+              }
+            },
+            {
+                "Name": "aType",
+                "Description": "The Type of this asset",
+                "DisplayName": "Type of the asset",
+                "Type": {
+                  "Name": "string"
+                }
+              },
+              {
+                "Name": "aCountry",
+                "Description": "The Country of this asset",
+                "DisplayName": "Country of the asset",
+                "Type": {
+                  "Name": "string"
+                }
+              },
+            {
+              "Name": "mPrice",
+              "Description": "The Market Price of this asset",
+              "DisplayName": "Market Price",
+              "Type": {
+                "Name": "money"
+              }
+            },
+            {
+              "Name": "dPrice",
+              "Description": "The Distressed Price of this asset",
+              "DisplayName": "Distressed Price",
+              "Type": {
+                "Name": "money"
+              }
+            }
+          ]
+        },
+        "Functions": [
+          {
+            "Name": "Terminate",
+            "DisplayName": "Terminate",
+            "Description": "Used to cancel this particular instance of asset transfer",
+            "Parameters": []
+          },
+          {
+            "Name": "MakeOffer",
+            "DisplayName": "Make Offer",
+            "Description": "Place an offer for this asset",
+            "Parameters": []
+          },
+          {
+            "Name": "Reject",
+            "DisplayName": "Reject",
+            "Description": "Reject the user's offer",
+            "Parameters": []
+          },
+          {
+            "Name": "AcceptOffer",
+            "DisplayName": "Accept Offer",
+            "Description": "Accept the user's offer",
+            "Parameters": [
+              {
+                "Name": "BankInspector",
+                "Description": "Specify a user to inspect this asset",
+                "DisplayName": "Bank Inspector",
+                "Type": {
+                  "Name": "BankInspector"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "RescindOffer",
+            "DisplayName": "Rescind Offer",
+            "Description": "Rescind your placed offer",
+            "Parameters": []
+          },
+          {
+            "Name": "Accept",
+            "DisplayName": "Accept",
+            "Description": "Accept the inspection results",
+            "Parameters": []
+          },
+          {
+            "Name": "MarkInspected",
+            "DisplayName": "Mark Inspected",
+            "Description": "Mark the asset as inspected",
+            "Parameters": []
+          },
+          {
+            "Name": "MarkRejected",
+            "DisplayName": "Mark Rejected",
+            "Description": "Mark the Buyer as Rejected",
+            "Parameters": []
+          }
+                  ],
+        "States": [
+          {
+            "Name": "Active",
+            "DisplayName": "Active Asset",
+            "Description": "The initial state of the asset transfer workflow",
+            "PercentComplete": 20,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceAdmin" ],
+                "Description": "Cancels this instance of asset transfer",
+                "Function": "Terminate",
+                "NextStates": [ "Terminated" ],
+                "DisplayName": "Terminate Offer"
+              },
+              {
+                "AllowedRoles": [ "Buyer" ],
+                "AllowedInstanceRoles": [],
+                "Description": "Make an offer for this asset",
+                "Function": "MakeOffer",
+                "NextStates": [ "OfferPlaced" ],
+                "DisplayName": "Make Offer"
+              }
+            ]
+          },
+          {
+            "Name": "OfferPlaced",
+            "DisplayName": "Offer Placed",
+            "Description": "Offer has been placed for the asset",
+            "PercentComplete": 30,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceAdmin" ],
+                "Description": "Accept the proposed offer for the asset",
+                "Function": "AcceptOffer",
+                "NextStates": [ "PendingInspection" ],
+                "DisplayName": "Accept Offer"
+              },
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceAdmin" ],
+                "Description": "Cancel this instance of asset transfer",
+                "Function": "Terminate",
+                "NextStates": [ "Active" ],
+                "DisplayName": "Active"
+              },
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBuyer" ],
+                "Description": "Rescind the offer you previously placed for this asset",
+                "Function": "RescindOffer",
+                "NextStates": [ "Active" ],
+                "DisplayName": "Rescind Offer"
+              }
+            ]
+          },
+          {
+            "Name": "PendingInspection",
+            "DisplayName": "Pending Inspection",
+            "Description": "Asset is pending inspection",
+            "PercentComplete": 40,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBuyer" ],
+                "Description": "Rescind the offer you placed for this asset",
+                "Function": "RescindOffer",
+                "NextStates": [ "Active" ],
+                "DisplayName": "Rescind Offer"
+              },
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBankInspector" ],
+                "Description": "Mark this asset as Rejected",
+                "Function": "MarkRejected",
+                "NextStates": [ "Active" ],
+                "DisplayName": "Mark Terminated"
+              },
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBankInspector" ],
+                "Description": "Mark this asset as inspected",
+                "Function": "MarkInspected",
+                "NextStates": [ "Inspected" ],
+                "DisplayName": "Mark Inspected"
+              }
+            ]
+          },
+          {
+            "Name": "Inspected",
+            "DisplayName": "Inspected",
+            "PercentComplete": 45,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBuyer" ],
+                "Description": "Sign Contract",
+                "Function": "Accept",
+                "NextStates": [ "Accepted" ],
+                "DisplayName": "Sign Offer"
+              },
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": [ "InstanceBuyer" ],
+                "Description": "Rescind the offer you placed for this asset",
+                "Function": "RescindOffer",
+                "NextStates": [ "Active" ],
+                "DisplayName": "Rescind Offer"
+              }
+            ]
+          },
+          {
+            "Name": "Accepted",
+            "DisplayName": "Contract Signed",
+            "Description": "Asset transfer process is complete",
+            "PercentComplete": 100,
+            "Style": "Success",
+            "Transitions": []
+          },
+          {
+            "Name": "Terminated",
+            "DisplayName": "Terminated",
+            "Description": "Asset transfer has been cancelled",
+            "PercentComplete": 100,
+            "Style": "Failure",
+            "Transitions": []
+          }
+        ]
+      }
+    ]
+  }
