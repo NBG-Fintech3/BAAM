@@ -9,24 +9,21 @@
     <div class="container-fluid bg-effect-white">
         <div class="row">
             <div class="col mt-4 mb-3 d-flex justify-content-center">
-                <table class="table table-striped table-hover table-cart">
+                <table class="table table-hover table-cart">
                     <thead>
                         <tr>
-                            <th>Users interested</th>
-                            <th></th>
-                            <th></th>
+                            <th>Full Name </th>
+                            <th>User Id</th>
+                            <th><span class="float-right">Inspect documents</span> </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let u of users">
-                            <td>{{u.firstName}}</td>
-                            <td>{{u.lastName}}</td>
-                            <!-- <td class="btn-icon"></td> -->
+                            <td>{{u.name}}</td>
+                            <td><span class="baam-fade">{{u.guid}}</span> </td>
                             <td>
-                                <button type="button" class="btn btn-small" data-toggle="modal" data-target="#myModal">
-                                    Check documents
-                                    <i class="fa fa-angle-right"></i>
-                                </button>
+                                <i class="fa fa-angle-right float-right pl-3"  [routerLink]="['/admin/inspect']"></i>
+                                <span class="baam-fade float-right font-italic"> {{u.status}} </span>
                             </td>
                         </tr>
                     </tbody>
@@ -44,6 +41,13 @@
     </div>
 </div>
 
+
+
+
+
+
+
+<!-- <button type="button" class="btn btn-action btn-small" data-toggle="modal" data-target="#myModal">open modal</button> -->
 
 <!-- The Modal -->
 <div class="modal" id="myModal">

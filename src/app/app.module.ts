@@ -19,6 +19,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AssetsComponent } from './apt-assets/all-assets-container/assets.component';
 import { AssetComponent } from './apt-assets/asset-preview/asset.component';
 import { SearchResultsComponent } from './apt-assets/filtered-assets/search-results.component';
+import { InspectDocComponent } from './admin/inspect-doc/inspect-doc.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { SearchResultsComponent } from './apt-assets/filtered-assets/search-resu
         BotPageComponent,
         EntirePageLoaderComponent,
         AdminLoginComponent,
-        AdminDashboardComponent
+        AdminDashboardComponent,
+        InspectDocComponent
     ],
     imports: [
         BrowserModule,
@@ -46,6 +48,7 @@ import { SearchResultsComponent } from './apt-assets/filtered-assets/search-resu
             { path: 'assets/assetId', component: AssetComponent, data: { breadcrumb: 'AssetId' } },
             { path: 'admin/login', component: AdminLoginComponent },
             { path: 'admin', component: AdminDashboardComponent },
+            { path: 'admin/inspect', component: InspectDocComponent },
             { path: 'cart', component: CartComponent, data: { breadcrumb: 'Pricing Model' } },
             { path: 'pricing', component: PricingModelComponent, data: { breadcrumb: 'Cart' } },
             { path: 'checkout', component: CheckoutComponent },
