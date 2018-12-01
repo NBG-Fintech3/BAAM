@@ -1,0 +1,55 @@
+.bot-container {
+    height: calc(100vh - 150px);
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+// Imported classes form Azure Bot Framework 
+.wc-chatview-panel {
+    background-color: $white;
+    border-top: 2px solid $gallery;
+    .wc-header {
+        background-color: $gallery;
+        border-bottom: 2px solid $white;
+        color: $scorpion;
+        padding: 20px 40px 25px !important;
+        margin-bottom: 0.5rem;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: 2rem;
+        color: $eminence;
+        span {
+            width: 700px !important;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    .wc-message-groups {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .wc-console {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .wc-message-from-me .wc-message-content {
+        background-color: $eminence;
+    }
+    .wc-message-from-me svg.wc-message-callout path {
+        fill: $eminence;
+    }
+    .wc-card button {
+        color: $vividViolet;
+    }
+    .wc-card button:hover {
+        border-color: $vividViolet;
+    }
+    .wc-card button:active {
+        background-color: $vividViolet;
+        border-color: $vividViolet;
+        color: $white;
+    }
+}
+

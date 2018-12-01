@@ -1,0 +1,71 @@
+<baam-header [links]="links"></baam-header>
+<div class="container-fluid bg-effect-gray">
+	<div class="row">
+		<div class="col mt-4 mb-2">
+			<h2>ASSETS</h2>
+		</div>
+	</div>
+	<div class="row mb-4">
+		<div class="col-lg-2">
+			<div class="dropdown">
+				<button class="btn custom-select" type="button" data-toggle="dropdown">
+					{{countryField}}
+				</button>
+				<div class="dropdown-menu">
+					<div class="dropdown-item" (click)="setCountry('Austria')">Austria</div>
+					<div class="dropdown-item" (click)="setCountry('Greece')">Greece</div>
+					<div class="dropdown-item" (click)="setCountry('Germany')">Germany</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2">
+			<div class="col">
+				<div class="dropdown">
+					<button class="btn custom-select" type="button" data-toggle="dropdown">
+						{{assetTypeField}}
+					</button>
+					<div class="dropdown-menu">
+						<div class="dropdown-item" (click)="setAssetType('Loft')">Loft</div>
+						<div class="dropdown-item" (click)="setAssetType('Apartment')">Apartment</div>
+						<div class="dropdown-item" (click)="setAssetType('Land')">Land</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<baam-search-results></baam-search-results>
+
+<div class="container-fluid bg-effect-gray">
+	<div class="row pt-3 mb-3">
+		<div class="col text-center">
+			<button class="btn btn-action" [routerLink]="['/cart']">SAVE SEARCH</button>
+		</div>
+	</div>
+
+	<div class="row mb-4">
+		<div class="col">
+			<ul class="pagination justify-content-center">
+				<!-- <li class="page-item disabled">
+										<a class="page-link" href="#" tabindex="-1">Previous</a>
+									</li> -->
+				<li class="page-item">
+					<a class="page-link active" href="#">1</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">3</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">...</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">Next</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

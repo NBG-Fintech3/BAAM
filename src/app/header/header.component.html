@@ -1,0 +1,44 @@
+<div class="container-fluid">
+	<div class="row d-flex">
+		<div class="col d-flex">
+			<div aria-label="breadcrumb">
+				<ol class="breadcrumb">
+
+					<li class="breadcrumb-item">
+						<a routerLink="">Home</a>
+					</li>
+					<li class="breadcrumb-item" *ngFor="let link of links" [ngClass]="{'active' : !link.url}">
+						<a> {{link.title}} </a>
+					</li>
+					
+				</ol>
+			</div>
+		</div>
+
+		
+		<div class="col">
+			<div class="input-group search-bar">
+				<input type="text" class="form-control" placeholder="Property Name, Address, City" aria-describedby="inputGroupAppend">
+				<div class="input-group-append">
+					<button class="input-group-text btn" id="inputGroupAppend" [routerLink]="['/assets']">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1">
+			<div class="btn-group">
+				<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-shopping-cart"></i>
+				</button>
+				<div class="counter-bubble">5</div>
+				<div class="dropdown-menu dropdown-menu-right">
+					<h6 class="dropdown-header">5 Items Selected</h6>
+					<div class="dropdown-item text-center" [routerLink]="['/cart']">View Cart</div>
+					<div class="dropdown-item text-center" [routerLink]="['/checkout']">Checkout</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

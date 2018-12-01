@@ -1,0 +1,32 @@
+// Dropdown
+
+.custom-select {
+    font-size: 0.9em;
+    color: $scorpion;
+    background-color: $white;
+    text-align: justify;
+    text-transform: initial;
+}
+
+.select-transparent {
+    border: none;
+    background-color: $mercury-transparent;
+    filter: blur(30%);
+}
+
+.dropdown-toggle {
+    background-color: transparent;   
+}
+
+.dropdown-item{
+    &:active, &:link {
+        background-color: $eminence;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+} 
+
+.dropdown-submenu{
+    padding-left: 20px;
+}

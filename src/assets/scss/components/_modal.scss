@@ -1,0 +1,23 @@
+// Modal
+
+.modal {
+    background-color: $black-transparent;
+    padding: 0 !important;
+    
+    .modal-dialog {
+        max-width: 400px;
+        margin: 7.75rem auto;
+    }
+    .modal-body {
+        padding: 3.4rem;
+        background-color: $paleSlate;
+        * {
+            color: $white;
+        }
+        input {
+            border-radius: 0;
+            color: $black;
+            font-weight: 500;
+        }
+    }
+}

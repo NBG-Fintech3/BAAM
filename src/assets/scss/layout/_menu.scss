@@ -1,0 +1,36 @@
+// Style all the menus
+
+// navigation menu
+.navbar {
+    position: absolute !important;
+    height: 80px;
+    background-color: $theme-nav-background;
+    a {
+        color: $white;
+        font-weight: 700;
+    }
+}
+.nav-light {
+    background-color: transparent;
+    a {
+        color: $eminence;
+    }
+    .logo {
+        background-image: url('assets/img/BAAM_logo_colour.png');
+    }
+}
+
+// path navigation menu
+.breadcrumb {
+    padding: 5px 10px;
+    height: 30px;
+    line-height: 20px;
+    background-color: $black-transparent;
+    .breadcrumb-item::before {
+        color: $eminence;
+    }
+    .active {
+        color: $white;
+    }
+}
+

@@ -1,0 +1,51 @@
+// Reusable Classes
+
+
+.d-center { 
+    // centers an element
+    display: block;
+    margin: 0 auto;
+}
+
+.social-icons {
+    font-size: 1.1em;
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+}
+.logo {
+    height: 2.8em;
+    width: 7.5em;
+    padding: 10px;
+    background-image: url('/assets/img/BAAM_logo_white.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.img-container { 
+    // use this class in elements with set style="background-image: url('your custom url') "
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+.bg-effect-gray {
+    background-color: $gallery;
+    border-bottom: 2px solid $white;
+}
+.bg-effect-white {
+    background-color: $white;
+    border-top: 2px solid $gallery;
+}
+.disp-inline {
+    * { display: inline; }
+    >* { margin-right: 3rem; }
+}
+
+.full-width {
+    width: 100%;
+    display: inline-block;
+}
+
+
+

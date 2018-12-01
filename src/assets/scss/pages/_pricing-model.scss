@@ -1,0 +1,14 @@
+baam-pricing-model {
+    .positive {
+        background-color: #d0e7b1;
+    }
+    .negative {
+        background-color: #e4bd9f;
+    }
+
+    @media (min-width: 960px) {
+        .table {
+            max-width: 60vw;
+        }
+    }
+}

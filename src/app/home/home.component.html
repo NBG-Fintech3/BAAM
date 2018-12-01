@@ -1,0 +1,54 @@
+<div class="container-fluid bg-container">
+    <form [formGroup]="searchAssetHomeForm" class="mx-auto"> 
+        <div class="row">
+            <div class="col text-center">
+                <h1>Find Your Next Investment</h1>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn custom-select select-transparent " type="button" data-toggle="dropdown">
+                        {{countryField}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" (click)="setCountry('Spain')">Spain</div>
+                        <div class="dropdown-item" (click)="setCountry('Greece')">Greece</div>
+                        <div class="dropdown-item" (click)="setCountry('Portugal')">Portugal</div>
+                        <div class="dropdown-item" (click)="setCountry('Cyprus')">Cyprus</div>
+                        <div class="dropdown-item" (click)="setCountry('Romania')">Romania</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn custom-select select-transparent " type="button" data-toggle="dropdown">
+                        {{assetTypeField}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" (click)="setAssetType('Residential')">Residential</div>
+                        <div class="dropdown-submenu">
+                            <div class="dropdown-item" (click)="setAssetType('Apartments')">Apartments</div>
+                            <div class="dropdown-item" (click)="setAssetType('Villas')">Villas</div>
+                        </div>
+                        <div class="dropdown-item" (click)="setAssetType('Office')">Office</div>
+                        <div class="dropdown-item" (click)="setAssetType('Warehouse')">Warehouse</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" placeholder="Property Name, Address, City" aria-describedby="inputGroupAppend">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn" id="inputGroupAppend" [routerLink]="['/assets']">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

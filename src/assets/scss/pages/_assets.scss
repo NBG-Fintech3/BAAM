@@ -1,0 +1,24 @@
+
+baam-search-results {
+    .card {
+        line-height: 1.2em;
+
+        border-radius: 0;
+        border: 1px solid $mercury;
+        padding: 8px;
+    
+        .card-img-top {
+            border-radius: 0;            
+        }
+        .card-body {
+            padding: 10px 0 ;
+        }
+    }
+    .card:hover {
+        cursor: pointer;
+    }
+    .card-img-top {
+        max-height: 260px;
+    }
+    
+}

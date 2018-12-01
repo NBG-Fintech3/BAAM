@@ -1,0 +1,39 @@
+baam-header {
+    >div {
+        padding-top: 95px;
+        min-height: 150px;
+        background-image: url('/assets/img/banner2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+
+    }
+  
+    .breadcrumb-item {
+        a {
+            color: $vividViolet !important;
+        }
+    }
+    .active {
+        a {
+            color: $white !important;
+        }
+    }
+
+    .counter-bubble {
+        height: 1.3em;
+        width: 1.3em;
+        border-radius: 50%;
+        display: block;
+        background-color: $eminence;
+        color: $white;
+        // font-weight: 600;
+        font-size: 0.9em;
+        text-align: center;
+        line-height: 1.3em;
+
+        position: absolute;
+    }
+
+}

@@ -1,0 +1,35 @@
+// Specific style for home page
+baam-home {
+    min-height: 100vh;
+    display: flex;
+
+    .bg-container {
+        min-height: 100vh;
+        background-image: url('assets/img/photo_home.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+    }
+    form {
+        max-width: 520px;
+        padding-top: calc( 100px + 12vh );
+        .row {
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+    }
+    .search-bar {
+        max-width: 100%;
+    }
+
+    @media(min-width: 960px) {
+        .bg-container {
+            background-size: contain;
+            background-position: center right;
+        }
+        form {
+            padding-top: 35vh;
+        }
+    }
+}

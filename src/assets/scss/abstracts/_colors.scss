@@ -1,0 +1,38 @@
+// Color Variables | Named with this: http://chir.ag/projects/name-that-color
+
+
+// Grayscale colors
+$white:    #fff;
+$gallery:  #F0F0F0;
+$mercury:  #e3e3e3;
+$paleSlate: #bdbabb;
+$scorpion: #646060;
+$black:    #000;
+
+// App colors
+$eminence: #5d2670;
+$vividViolet: #953CB3;
+$sushi:    #709c31;
+
+// Transparent colors
+$black-transparent:    rgba(0,0,0,.7);
+$eminence-transparent: rgba(105,43,124,.7);
+$scorpion-transparent: rgba(105,95,98,.7);
+$scorpion-transparent: rgba(105,95,98,.7);
+$mercury-transparent: rgba(227, 227, 227,.3);
+
+
+// 
+$theme-background: $white;
+$theme-text: $scorpion;
+
+$theme-button: $eminence;
+$theme-button-action: $sushi;
+
+$theme-inactive: "";
+$theme-error: "";
+
+$theme-nav-background: $eminence-transparent;
+
+$theme-footer-background: $black;
+$theme-footer-links: $scorpion;

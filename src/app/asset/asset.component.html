@@ -1,0 +1,124 @@
+<baam-header [links]="links"></baam-header>
+<div class="container-fluid">
+
+
+	<div class="row mb-3">
+		<div class="col-md-6">
+			<h2 class="mt-3">Santorini, Greece</h2>
+		</div>
+	</div>
+
+
+	<div class="row mb-3">
+		
+		<div class="col-lg-6">
+			<div class="img-container" style="background-image: url('../../assets/img/house1.jpg')">
+				<!-- paste the img src in the style url to position img correctly -->
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="layout-this">
+				
+				<div class="row">
+					<div class="col">
+						<h4>Current Market Value of the property: € 240Κ</h4>
+						<p>Distressed Value: € 150K</p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#description">Property Description</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#information">Asset Information</a>
+							</li>
+						</ul>
+						<div class="tab-content ">
+							<div id="description" class="container tab-pane active">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+							<div id="information" class="container tab-pane">
+								<p>
+									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.
+								</p>
+								<ol>
+									<li>
+										Consectetur adipiscing elit.
+									</li>
+									<li>
+										Cillum dolore eu fugiat nulla pariatur.
+									</li>
+									<li>
+										Mollit anim id est laborum.
+									</li>
+								</ol>
+							</div>
+						</div>
+				
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="row mb-3">
+		<div class="col-lg-3">
+			<button class="btn btn-dark">PHOTOS (3)</button>
+		</div>
+
+		<div class="col-lg-3">
+			<button class="btn btn-action btn-wide float-right" (click)="addToCart()"> <!-- data-toggle="modal" data-target="#myModal" -->
+ 				<span *ngIf="!addToCartBtn">
+                    <i class="fa fa-cart-plus"></i> ADD TO THE CART
+                 </span>
+                 <span *ngIf="addToCartBtn" [routerLink]="['/checkout']" class="full-width">PROCEED TO CHECKOUT</span>
+			</button>
+		</div>
+
+		
+		<div class="col">
+			<a class="btn btn-light btn-wide float-right" href="../../assets/files/Yielding_Report.pdf" target="_blank">
+				<i class="fa fa-shopping-cart"></i> REPORT BEST YIELDING OPTIONS
+			</a>
+		</div>
+		
+
+
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h5 class="text-center mb-4">I'M INTERESTED</h5>
+				<form [formGroup]="showInterestForm"><!--form-->
+					<div class="form-group">
+						<input type="text" class="form-control" formControlName="name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" formControlName="email" placeholder="Email">
+					</div>
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input">
+						<label class="form-check-label custom-check">Lorem ipsum dolor sit amet</label>
+					</div>
+					<button type="submit" class="btn btn-action mt-3 d-center" data-dismiss="modal">Send</button>
+                </form>
+            </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+// custom checkboxes
+input[type='checkbox'] {
+    z-index: 20000;
+    opacity: 0;
+}
+.custom-check:before {
+    content: "";
+    color: $black;
+    height: 15px;
+    width: 15px;
+    border-radius: 2px;
+    background-color: white;
+    position: absolute;
+    margin-left: -19px;
+    margin-top: 5px;
+    line-height: 15px;
+    z-index: 1;
+    display: inline-flex;
+    justify-content: space-around;      
+}
+input[type='checkbox']:checked ~ .custom-check:before {
+    content: "✓";
+}

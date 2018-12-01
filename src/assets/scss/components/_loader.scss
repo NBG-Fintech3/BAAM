@@ -1,0 +1,58 @@
+// Loader
+
+.entire-page-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    overflow: scroll;
+
+    background-color: $white;
+    opacity: 0.9;
+    z-index: 1000000;
+    p {
+        // color: $eminence;
+        line-height: 2em;
+        width: 500px;
+        display: block;
+        text-align: center;
+
+        position: absolute;
+        left: calc(50% - 250px);
+        bottom: 20px;
+    }
+    /*
+        TODO:  add this loader
+        https://codepen.io/jmercier/pen/rLOLWK 
+    */
+    .image {
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 25px);
+        background: url('/assets/img/B_logo.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .dot-loader {
+        position: absolute;
+        top: calc(50% + 40px);
+        left: calc(50% - 26px);
+    }
+    .dot {
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background-color: $eminence;
+        display: inline-block;
+    }
+    
+}
+.hide-me {
+    transition: opacity 0.5s cubic-bezier(0.47, 0, 0.745, 0.715); // easeInSine
+    opacity: 0;
+} 

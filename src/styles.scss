@@ -1,0 +1,56 @@
+// Style Guide: https://github.com/georgeroubie/CSS-Style-Guide#readme
+// Architecture: https://github.com/georgeroubie/SCSS-7-1-pattern
+
+// Abstracts
+@import './assets/scss/abstracts/_variables';
+@import './assets/scss/abstracts/_colors';
+@import './assets/scss/abstracts/_mixins';
+@import './assets/scss/abstracts/_placeholders';
+@import './assets/scss/abstracts/_classes';
+@import './assets/scss/abstracts/_animations'; 
+
+// Vendors
+@import './assets/scss/vendors/example-library';
+@import './../node_modules/bootstrap/scss/bootstrap';
+
+// Base
+@import './assets/scss/base/_base'; 
+@import './assets/scss/base/_bootstrap-override'; 
+@import './assets/scss/base/_reset'; 
+@import './assets/scss/base/_typography';
+
+// Layout
+@import './assets/scss/layout/_grid';
+@import './assets/scss/layout/_header';
+@import './assets/scss/layout/_footer';
+@import './assets/scss/layout/_menu';
+@import './assets/scss/layout/_forms';
+@import './assets/scss/layout/_tables';
+
+// Components
+@import './assets/scss/components/_buttons';
+@import './assets/scss/components/_checkboxes';
+@import './assets/scss/components/_dropdown';
+@import './assets/scss/components/_links';
+@import './assets/scss/components/_loader';
+@import './assets/scss/components/_modal';
+@import './assets/scss/components/_pagination';
+@import './assets/scss/components/_search-bar';
+
+// Vendors Extensions
+@import './assets/scss/vendors-extensions/example-library';
+
+// Pages
+@import './assets/scss/pages/_asset';
+@import './assets/scss/pages/_assets';
+@import './assets/scss/pages/_bot';
+@import './assets/scss/pages/_cart';
+@import './assets/scss/pages/_checkout';
+@import './assets/scss/pages/_home';
+@import './assets/scss/pages/_contact';
+@import './assets/scss/pages/_userProfile';
+@import './assets/scss/pages/_pricing-model.scss';
+
+// Themes
+@import './assets/scss/themes/_admin';
+@import './assets/scss/themes/_authenticated';

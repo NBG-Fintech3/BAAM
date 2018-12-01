@@ -1,0 +1,32 @@
+.table-cart {
+    border: 1px solid $mercury;
+
+    td {
+        padding: .3rem;
+    }
+    tr:nth-child(even) {
+        .fa-shopping-cart {
+            color: $sushi;
+        }
+    }
+    tr:nth-child(odd) {
+        .fa-shopping-cart {
+            color: $eminence;
+        }
+    }
+    tr:hover {
+        .btn-icon {
+            color: $scorpion;
+        }
+    }
+}
+.btn-icon {
+    width: 30px ;
+    color: $mercury;
+}
+
+@media (min-width: 960px) {
+    .table-cart {
+        max-width: 60vw;
+    }
+}
