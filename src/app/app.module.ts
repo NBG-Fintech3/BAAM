@@ -8,8 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
-import { AssetComponent } from './asset/asset.component';
 import { PricingModelComponent } from './pricing-model/pricing-model.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { BotPageComponent } from './bot-page/bot-page.component';
@@ -18,7 +16,9 @@ import { ContractsService } from './services/contracts/contracts.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { AssetsComponent } from './all-assets-container/assets.component';
+import { AssetsComponent } from './apt-assets/all-assets-container/assets.component';
+import { AssetComponent } from './apt-assets/asset-preview/asset.component';
+import { SearchResultsComponent } from './apt-assets/filtered-assets/search-results.component';
 
 @NgModule({
     declarations: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
 	selector: 'baam-home',
@@ -9,7 +9,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
     
-    public searchAssetHomeForm: FormGroup;
+    public searchAssetHomeForm = new FormGroup({
+        searchTextInput : new FormControl('')
+    });
 	public countryField: string = 'COUNTRY';
 	public assetTypeField: string = 'ASSET TYPE';
 
