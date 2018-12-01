@@ -79,11 +79,12 @@
 		</div>
 
 		<div class="col-lg-3">
-			<button class="btn btn-action btn-wide float-right" (click)="addToCart()"> <!-- data-toggle="modal" data-target="#myModal" -->
- 				<span *ngIf="!addToCartBtn">
+			<button class="btn btn-action btn-wide float-right"> 
+                <!-- data-toggle="modal" data-target="#myModal" -->
+ 				<!-- <span *ngIf="!addToCartBtn" (click)="addToCartBtn=!addToCartBtn">
                     <i class="fa fa-cart-plus"></i> ADD TO THE CART
-                 </span>
-                 <span *ngIf="addToCartBtn" [routerLink]="['/checkout']" class="full-width">PROCEED TO CHECKOUT</span>
+                 </span> -->
+                 <span [routerLink]="['/checkout']" class="full-width">I AM INTERESTED</span>
 			</button>
 		</div>
 

@@ -9,7 +9,7 @@ import { ApiService } from './services/api-service/api.service';
 export class AppComponent implements OnInit {
     title = 'baam';
 
-    constructor( private apiService: ApiService ) {
+    constructor( ) {
 
     }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ApiService } from 'src/app/services/api-service/api.service';
+import { ApiService } from '../../services/api-service/api.service';
+
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'baam-asset',
@@ -20,16 +22,19 @@ export class AssetComponent implements OnInit {
         { title: 'Santorini, Oia' }
     ];
 
+    public assetData;
+
+
     constructor( private apiService: ApiService ) { }
 
     ngOnInit() {
 
-        this.apiService.get( 'contracts/23/' ).subscribe(
-            r => console.log(r)
+        this.apiService.get( 'contracts/23/' ).map( r => r.json() ).subscribe(
+            r => {
+                console.log(r)
+                this.assetData = r;
+            }
         );
     }
 
-    addToCart() {
-        this.addToCartBtn = true;
-    }
 }
