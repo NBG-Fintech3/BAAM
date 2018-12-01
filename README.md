@@ -1,8 +1,8 @@
-# General information
+# Technical Information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 Angular cli version was updated to 7.0.3
 
-
+<!-- 
 ## Installation
 (the following should be run once)
  1. Install node js from [here](https://nodejs.org/en/download)
@@ -107,4 +107,4 @@ You have to delete the word Service from the class name, but not from the file n
 ### Create Enum
 `ng g e core/enums/name -d`  
 
-
+ -->
