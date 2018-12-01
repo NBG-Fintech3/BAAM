@@ -21,7 +21,13 @@
                         <tr *ngFor="let u of users">
                             <td>{{u.firstName}}</td>
                             <td>{{u.lastName}}</td>
-                            <td class="btn-icon"><i class="fa fa-angle-right"></i></td>
+                            <!-- <td class="btn-icon"></td> -->
+                            <td>
+                                <button type="button" class="btn btn-small" data-toggle="modal" data-target="#myModal">
+                                    Check documents
+                                    <i class="fa fa-angle-right"></i>
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -36,6 +42,46 @@
             </div>
         </div>
     </div>
+</div>
 
 
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Inspect user documents:</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <i class="fa fa-id-card color-primary"></i>
+                            <label>Passport</label>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-file color-primary"></i>
+                            <label>Credit Score (loan only)</label>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-file color-primary"></i>
+                            <label>Tax Certification</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
 </div>
