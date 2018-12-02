@@ -10,8 +10,6 @@ import { ApiService } from '../services/api-service/api.service';
 })
 export class HomeComponent implements OnInit {
     
-
-
     public acceptRejectForm = new FormGroup({
         name: new FormControl(''),
         email: new FormControl('')

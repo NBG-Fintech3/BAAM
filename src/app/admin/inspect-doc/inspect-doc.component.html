@@ -10,11 +10,18 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-id-card color-primary"></i>
-                    <label>Biometric match</label>
+                        <i class="fa fa-id-card color-primary"></i>
+                        <label>Passport</label>
+                   
                 </div>
                 <div class="card-body">
                     <img class="col-6 card-img-top" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT.jpg">
+                    <div class="col-6" *ngIf='answer'>
+                        <ul>
+                            <li> documentProximity: {{answer.payload.documentProximity}} </li>
+                            <li> documentType: {{answer.payload.documentType}} </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-primary" (click)="ocrPassport()">Extract customer data</button>
@@ -25,12 +32,12 @@
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-id-card color-primary"></i>
-                    <label>Passport</label>
+                        <i class="fa fa-id-card color-primary"></i>
+                        <label>Biometric match</label>
                 </div>
                 <div class="card-body">
-                    <img class="col-6" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT.jpg">
-                    <img class="col-3" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT - Copy.jpg">
+                    <img class="col-4" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT - Copy.jpg">
+                    <img class="col-4" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT - Copy.jpg">
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-primary" (click)="biometricsPassport()">Validate match</button>
@@ -42,7 +49,9 @@
     <div class="row mt-3 mb-3">
         <div class="col">
             <div class="card p-3 ">
-                <a href="#">Click here to inspect other uploaded documents </a>
+                Click here to inspect other uploaded documents 
+                <a href="#"> Inspect Tax certification  <i class="fa fa-file color-primary"></i> </a>
+                <a href="#"> Inspect other certification   <i class="fa fa-file color-primary"></i> </a>
             </div>
         </div>
     </div>
