@@ -29,12 +29,14 @@ export class AssetComponent implements OnInit {
 
     ngOnInit() {
 
-        this.apiService.get( 'contracts/23/' ).map( r => r.json() ).subscribe(
-            r => {
-                console.log(r)
-                this.assetData = r;
-            }
-        );
+    }
+
+
+    showInterest() {
+        this.addToCartBtn = !this.addToCartBtn;
+
+        
+
     }
 
 }

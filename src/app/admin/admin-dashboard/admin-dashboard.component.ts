@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api-service/api.service';
 
 @Component({
     selector: 'baam-admin-dashboard',
@@ -19,9 +20,38 @@ export class AdminDashboardComponent implements OnInit {
     ]
 
 
-    constructor(private router: Router) { }
+    constructor(
+        private router: Router,
+        private apiService: ApiService ) { }
 
     ngOnInit() {
+
+        this.apiService.get( 'admin' , this.apiService.contractId.toString(), 'actions' ).map( r => r.json() ).subscribe(
+            r => {
+                console.log(r);
+
+                let returnedId = r.workflowFunctions[0].id ; 
+                console.log( 'returnedId: ', returnedId );
+
+                let data = {
+                    "workflowFunctionId": 96,
+                    "workflowActionParameters":
+                        [{
+                            "name": "BankInspector",
+                            "value": "0xab004d62497133d51dca9a93d7114c7e9ac56fed"
+                        }]
+                };
+                  
+                this.apiService.post( 'admin', this.apiService.contractId.toString() , data  ).subscribe(
+                    r => {
+                        console.log("post show interest response : " , r );
+                    }
+                )
+
+            }
+        )
+
+
     }
 
 }

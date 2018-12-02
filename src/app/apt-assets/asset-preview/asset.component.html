@@ -84,7 +84,7 @@
 		<div class="col-lg-3">
 			<button class="btn btn-action btn-wide float-right"> 
                 <!-- data-toggle="modal" data-target="#myModal" -->
- 				<span *ngIf="!addToCartBtn" (click)="addToCartBtn=!addToCartBtn">
+ 				<span *ngIf="!addToCartBtn" (click)="showInterest()">
                     <i class="fa fa-cart-plus"></i> ADD TO THE CART
                  </span>
                  <span [routerLink]="['/checkout']" *ngIf="addToCartBtn" class="full-width">Proceed to checkout</span>
