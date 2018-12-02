@@ -17,9 +17,11 @@
                 <div class="card-body">
                     <img class="col-6 card-img-top" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT.jpg">
                     <div class="col-6" *ngIf='answer'>
-                        <ul>
-                            <li> documentProximity: {{answer.payload.documentProximity}} </li>
-                            <li> documentType: {{answer.payload.documentType}} </li>
+                        <ul class="list-group list-group-flush" > 
+                            <li class="list-group-item"> documentProximity : {{answer.payload.documentProximity}} </li>
+                            <li class="list-group-item"> documentType : {{answer.payload.documentType}} </li>
+                            <li class="list-group-item"> {{answer.payload.items[1].propertyName}} : {{answer.payload.items[1].propertyValue}} </li>
+                            <li class="list-group-item"> {{answer.payload.items[2].propertyName}} :  {{answer.payload.items[2].propertyValue}} </li>
                         </ul>
                     </div>
                 </div>
@@ -38,6 +40,13 @@
                 <div class="card-body">
                     <img class="col-4" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT - Copy.jpg">
                     <img class="col-4" src="../../../assets/files/uploaded-assets/B5TFfIPIgAA3IRT - Copy.jpg">
+                    <div class="col-6" *ngIf='answer2'>
+                        <li class="list-group-item"> face1 : {{ answer2["face-num1"] }} </li>
+                        <li class="list-group-item"> face2 : {{ answer2["face-num2"] }} </li>
+                        <li class="list-group-item"> matching-level : {{ answer2["matching-level"] }} </li>
+                        <li class="list-group-item"> matching-score : {{ answer2["matching-score"] }} </li>
+
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-primary" (click)="biometricsPassport()">Validate match</button>
