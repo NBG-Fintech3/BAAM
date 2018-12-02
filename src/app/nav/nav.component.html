@@ -6,9 +6,35 @@
 			<!-- <li class="nav-item">
 				<a class="nav-link" href="#">Register</a>
             </li>	 -->
-			<li class="nav-item">
+			<li class="nav-item" (click)="showLogin = !showLogin">
                 <a class="nav-link" href="#">Login</a>
+                <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Show notifications</button>
             </li>
 		</ul>
 	</div>
 </nav>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4>  Your papers have been checked successfuly! </h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center mb-4"> Please let us know wheher you accept this transaction. </h5>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-action" (click)="acceptTransaction()">Accept</button>
+                        <button class="btn btn-primary" data-dismiss="modal">Reject</button>
+                </div>
+            </div>
+           
+    
+        </div>
+    </div>
+

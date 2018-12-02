@@ -40,37 +40,7 @@ export class HomeComponent implements OnInit {
     }
     
 
-    acceptTransaction() {
-        // console.log('heh');
-        // return;
-
-        this.apiService.get( 'buyer' , this.apiService.contractId.toString(), 'actions' ).map( r => r.json() ).subscribe(
-            r => {
-                console.log(r);
-
-                let returnedId = r.workflowFunctions[0].id ; 
-                console.log( 'returnedId: ', returnedId );
-
-                let data = {
-                    "workflowFunctionId": returnedId,
-                    "workflowActionParameters": [
-                        {
-                            "name":"digitalCertificateHash",
-                            "value":"34234234234"
-                        }
-                    ]
-                };
-                  
-                this.apiService.post( 'buyer', this.apiService.contractId.toString() , data  ).subscribe(
-                    r => {
-                        console.log("post show interest response : " , r );
-                    }
-                )
-
-            }
-        )
-
-    }
+   
 
 
 }

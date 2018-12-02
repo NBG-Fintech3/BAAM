@@ -13,8 +13,18 @@ export class InspectDocComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+       
+    }
 
+    ocrPassport() {
+        
+    }
 
+    biometricsPassport() {
+        
+    }
+
+    inspectionSuccess() {
         this.apiService.get( 'inspector' , this.apiService.contractId.toString(), 'actions' ).map( r => r.json() ).subscribe(
             r => {
                 console.log(r);
@@ -37,5 +47,5 @@ export class InspectDocComponent implements OnInit {
         )
 
     }
-
 }
+
