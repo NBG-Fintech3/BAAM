@@ -21,8 +21,11 @@
 				
 				<div class="row">
 					<div class="col">
-						<h4>Current Market Value of the property: € 240Κ</h4>
-						<p>Distressed Value: € 150K</p>
+						<h4>Current Market Value of the property: €
+                            <span class="font-weight-light" style="text-decoration: line-through"> 240Κ</span> 
+                            <span class="font-weight-bold" style="color: #709c31">168K</span>
+                        </h4>
+						<!-- <p>Distressed Value: € 150K</p> -->
 					</div>
 				</div>
 				
@@ -81,10 +84,10 @@
 		<div class="col-lg-3">
 			<button class="btn btn-action btn-wide float-right"> 
                 <!-- data-toggle="modal" data-target="#myModal" -->
- 				<!-- <span *ngIf="!addToCartBtn" (click)="addToCartBtn=!addToCartBtn">
+ 				<span *ngIf="!addToCartBtn" (click)="addToCartBtn=!addToCartBtn">
                     <i class="fa fa-cart-plus"></i> ADD TO THE CART
-                 </span> -->
-                 <span [routerLink]="['/checkout']" class="full-width">I AM INTERESTED</span>
+                 </span>
+                 <span [routerLink]="['/checkout']" *ngIf="addToCartBtn" class="full-width">Proceed to checkout</span>
 			</button>
 		</div>
 
