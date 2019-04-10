@@ -32,14 +32,14 @@ export class BotPageComponent implements OnInit {
                 };
         
                 const botConnection = new BotChat.DirectLine({
-                    secret: 'IvSV8omrOSA.cwA.MCM.FN6tG5VI5PkDdYOfPGrFjoxop-LPUcHCELEkHzfG0Jk',
+                    secret: 'qXg8DqMnHcI.fi7iTr8ITjRsORLsP77BemCKZgh4C91F4YJOlapHWZ8',
                     user
                 });
         
                 BotChat.App({
                     botConnection,
                     user,
-                    bot: { id: '5ed18033-8c6b-43ed-b707-04496ffdc88d' },
+                    bot: { id: '96075393-808a-41ee-866b-9943b76f4b59' },
                     resize: 'detect'
                 }, document.getElementById("bot"));
         

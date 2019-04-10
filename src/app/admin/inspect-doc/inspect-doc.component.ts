@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { ApiService } from '../../services/api-service/api.service';
-import { Http, RequestOptions, Headers } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operator/map';
 
 @Component({
